@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientSearchService.API", "PatientSearchService.API\PatientSearchService.API.csproj", "{4B28274F-D4A2-4925-9DE1-04F297969BCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A379C64C-1B7F-47A4-A23E-E1DD69D359D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{25AE076E-0120-4829-9790-EF896AB7F653}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iPas.Infrastructure.EventBus", "iPas.Infrastructure.EventBus\iPas.Infrastructure.EventBus.csproj", "{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iPas.Infrastructure.EventBusServiceBus", "iPas.Infrastructure.EventBusServiceBus\iPas.Infrastructure.EventBusServiceBus.csproj", "{FB8D2449-A24D-4C18-9B35-61A2856E23DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iPas.Infrastructure.IntegrationEventLogEF", "iPas.Infrastructure.IntegrationEventLogEF\iPas.Infrastructure.IntegrationEventLogEF.csproj", "{8C23093E-2362-4493-A6BF-21ED39FC17D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientSearchService.Data", "PatientSearchService.Data\PatientSearchService.Data.csproj", "{0D33274F-3611-46E4-A8C1-244A3EC0D06A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B28274F-D4A2-4925-9DE1-04F297969BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B28274F-D4A2-4925-9DE1-04F297969BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B28274F-D4A2-4925-9DE1-04F297969BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B28274F-D4A2-4925-9DE1-04F297969BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8D2449-A24D-4C18-9B35-61A2856E23DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8D2449-A24D-4C18-9B35-61A2856E23DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8D2449-A24D-4C18-9B35-61A2856E23DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8D2449-A24D-4C18-9B35-61A2856E23DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C23093E-2362-4493-A6BF-21ED39FC17D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C23093E-2362-4493-A6BF-21ED39FC17D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C23093E-2362-4493-A6BF-21ED39FC17D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C23093E-2362-4493-A6BF-21ED39FC17D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D33274F-3611-46E4-A8C1-244A3EC0D06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D33274F-3611-46E4-A8C1-244A3EC0D06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D33274F-3611-46E4-A8C1-244A3EC0D06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D33274F-3611-46E4-A8C1-244A3EC0D06A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25AE076E-0120-4829-9790-EF896AB7F653} = {A379C64C-1B7F-47A4-A23E-E1DD69D359D6}
+		{9A7D445E-F25C-4EAC-8EC2-28F9E5D558C3} = {25AE076E-0120-4829-9790-EF896AB7F653}
+		{FB8D2449-A24D-4C18-9B35-61A2856E23DC} = {25AE076E-0120-4829-9790-EF896AB7F653}
+		{8C23093E-2362-4493-A6BF-21ED39FC17D8} = {25AE076E-0120-4829-9790-EF896AB7F653}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25250B16-C099-42A9-B4FF-8738D3452ED6}
+	EndGlobalSection
+EndGlobal

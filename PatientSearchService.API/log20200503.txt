@@ -1,0 +1,258 @@
+2020-05-03 00:15:33.214 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 00:15:33.749 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 00:15:37.967 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 00:15:37.996 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 00:22:50.041 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 00:22:50.552 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 00:22:54.601 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 00:22:55.017 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 00:22:55.019 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 00:22:55.043 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 00:23:34.589 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 00:24:37.876 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 00:26:58.825 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 00:27:02.799 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 00:27:03.162 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 00:27:03.163 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 00:27:03.188 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 00:38:51.815 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 00:38:57.453 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 00:39:01.393 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 00:39:01.798 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 00:39:01.800 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 00:39:01.825 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 00:39:36.925 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 00:39:36.982 +05:30 [ERR] An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'PatientSearchService.API.PatientSearchRepository' can be invoked with the available services and parameters:
+Cannot resolve parameter 'System.String indexName' of constructor 'Void .ctor(PatientSearchService.API.ElasticSearchClient, System.String)'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetValidConstructorBindings(ConstructorInfo[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__8_0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 00:39:47.685 +05:30 [ERR] An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'PatientSearchService.API.PatientSearchRepository' can be invoked with the available services and parameters:
+Cannot resolve parameter 'System.String indexName' of constructor 'Void .ctor(PatientSearchService.API.ElasticSearchClient, System.String)'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetValidConstructorBindings(ConstructorInfo[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__8_0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 00:40:03.433 +05:30 [ERR] An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating PatientSearchService.API.PatientSearchRepository.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'PatientSearchService.API.PatientSearchRepository' can be invoked with the available services and parameters:
+Cannot resolve parameter 'System.String indexName' of constructor 'Void .ctor(PatientSearchService.API.ElasticSearchClient, System.String)'.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.GetValidConstructorBindings(ConstructorInfo[] availableConstructors, IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.CreateInstance(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.<Execute>b__8_0()
+   at Autofac.Core.Lifetime.LifetimeScope.CreateSharedInstance(Guid id, Func`1 creator)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(ResolveRequest request)
+   at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(ResolveRequest request)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveOptionalService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.ResolveOptional(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 01:26:49.453 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 01:26:49.979 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 01:26:53.994 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 01:26:54.409 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 01:26:54.411 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 01:26:54.438 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 01:27:36.896 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 01:38:58.937 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 01:38:59.525 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 01:39:03.621 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 01:39:03.982 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 01:39:03.984 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 01:39:04.010 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 01:39:18.273 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 01:45:00.778 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 01:45:01.251 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 01:45:05.375 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 01:45:05.741 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 01:45:05.742 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 01:45:05.767 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 01:45:11.154 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:07:34.959 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:07:35.451 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:07:39.683 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:07:40.052 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:07:40.052 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:07:40.077 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:07:43.596 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:19:55.110 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:19:55.599 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:19:59.527 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:19:59.898 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:19:59.900 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:19:59.927 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:20:14.180 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:21:39.394 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:21:39.887 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:21:43.938 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:21:44.376 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:21:44.377 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:21:44.403 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:22:40.383 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:22:52.882 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:22:57.093 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:22:57.520 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:22:57.521 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:22:57.547 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:23:02.565 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:27:14.891 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:27:26.965 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:27:31.283 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:27:31.681 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:27:31.683 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:27:31.709 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:27:40.141 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:31:09.841 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:31:12.301 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:31:16.238 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:31:16.571 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:31:16.572 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:31:16.599 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:31:20.741 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:40:54.203 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:40:54.844 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:40:59.274 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:40:59.650 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:40:59.651 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:40:59.677 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:41:02.809 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:51:41.245 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:51:41.785 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:51:46.038 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:51:46.406 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:51:46.408 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:51:46.435 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:51:50.759 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:53:53.721 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:53:54.223 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:53:58.547 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:53:59.109 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:53:59.111 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:53:59.137 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:54:04.108 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:54:04.171 +05:30 [ERR] Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+System.InvalidOperationException: Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 02:55:45.472 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 02:55:45.985 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 02:55:50.287 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 02:55:50.660 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 02:55:50.661 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 02:55:50.688 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 02:55:56.271 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 02:55:56.328 +05:30 [ERR] Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+System.InvalidOperationException: Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 03:02:15.789 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 03:02:16.330 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 03:02:20.316 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 03:02:20.767 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 03:02:20.768 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 03:02:20.797 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 03:02:27.779 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 03:02:27.844 +05:30 [ERR] Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+System.InvalidOperationException: Unable to resolve service for type 'PatientSearchService.API.ElasticSearchService' while attempting to activate 'PatientSearchService.API.PatientSearchController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-03 03:03:05.599 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 03:03:06.160 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 03:03:10.363 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 03:03:10.742 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 03:03:10.743 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 03:03:10.770 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 03:03:15.346 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 03:24:15.110 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 03:24:15.654 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 03:24:19.725 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 03:24:20.132 +05:30 [WRN] The messaging entity PatientsDetailsMessageReceivedEvent already exists.
+2020-05-03 03:24:20.133 +05:30 [INF] Subscribing to event PatientsDetailsMessageReceivedEvent with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 03:24:20.158 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-03 03:24:28.235 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-03 22:09:05.437 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-03 22:09:06.242 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-03 22:09:10.360 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-03 22:09:10.688 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-03 22:09:10.690 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-03 22:09:10.716 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.

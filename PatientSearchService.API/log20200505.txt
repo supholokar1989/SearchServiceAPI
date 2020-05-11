@@ -1,0 +1,207 @@
+2020-05-05 00:02:05.759 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 00:02:06.691 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 00:02:10.869 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 00:02:11.285 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 00:02:11.288 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 00:02:11.327 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 00:02:28.417 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 00:02:51.482 +05:30 [ERR] Handler was not found for request of type MediatR.IRequestHandler`2[PatientSearchService.Data.SearchPatientDetailsQuery,PatientSearchService.Data.SearchPatientDetailsResult]. Register your handlers with the container. See the samples in GitHub for examples.
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[PatientSearchService.Data.SearchPatientDetailsQuery,PatientSearchService.Data.SearchPatientDetailsResult]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at PatientSearchService.API.PatientSearchController.SearchAsync(QueryStringConstructor q) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Controllers\PatientSearchController.cs:line 41
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-05 00:11:20.010 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 00:11:20.672 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 00:11:24.645 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 00:11:25.048 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 00:11:25.049 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 00:11:25.077 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 00:11:30.602 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 00:11:51.355 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 00:11:53.658 +05:30 [ERR] Handler was not found for request of type MediatR.IRequestHandler`2[PatientSearchService.Data.SearchPatientDetailsQuery,PatientSearchService.Data.SearchPatientDetailsResult]. Register your handlers with the container. See the samples in GitHub for examples.
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[PatientSearchService.Data.SearchPatientDetailsQuery,PatientSearchService.Data.SearchPatientDetailsResult]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at PatientSearchService.API.PatientSearchController.SearchAsync(QueryStringConstructor q) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Controllers\PatientSearchController.cs:line 43
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2020-05-05 00:15:36.289 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 00:15:46.703 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 00:15:50.418 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 00:15:50.749 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 00:15:50.751 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 00:15:50.777 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 00:15:56.124 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 00:16:04.366 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 00:18:49.736 +05:30 [ERR] ERROR handling message: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'. - Context: {"Action":"Receive","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.ServiceBusCommunicationException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+ ---> Microsoft.Azure.ServiceBus.ServiceBusException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass64_0.<<ReceiveAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(Int32 maxMessageCount, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.<MessagePumpTaskAsync>b__11_0()
+2020-05-05 00:18:49.826 +05:30 [ERR] ERROR handling message: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'. - Context: {"Action":"Receive","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.ServiceBusCommunicationException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+ ---> Microsoft.Azure.ServiceBus.ServiceBusException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass64_0.<<ReceiveAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(Int32 maxMessageCount, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.<MessagePumpTaskAsync>b__11_0()
+2020-05-05 00:18:49.841 +05:30 [ERR] ERROR handling message: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'. - Context: {"Action":"Receive","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.ServiceBusCommunicationException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+ ---> Microsoft.Azure.ServiceBus.ServiceBusException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass64_0.<<ReceiveAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(Int32 maxMessageCount, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.<MessagePumpTaskAsync>b__11_0()
+2020-05-05 00:18:49.855 +05:30 [ERR] ERROR handling message: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'. - Context: {"Action":"Receive","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.ServiceBusCommunicationException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+ ---> Microsoft.Azure.ServiceBus.ServiceBusException: The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'cb182c23-467c-490d-88cc-9ac5d521923e'.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnReceiveAsync(Int32 maxMessageCount, TimeSpan serverWaitTime)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass64_0.<<ReceiveAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(Int32 maxMessageCount, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.ReceiveAsync(TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.<MessagePumpTaskAsync>b__11_0()
+2020-05-05 00:19:41.030 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 00:22:58.666 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-05 00:24:30.945 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-05 00:24:56.584 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 15:21:22.640 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 15:21:23.358 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 15:21:27.099 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 15:21:27.438 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 15:21:27.439 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 15:21:27.468 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 15:22:42.671 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 15:22:43.298 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 15:22:47.129 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 15:22:47.525 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 15:22:47.527 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 15:22:47.554 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 15:36:33.752 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 15:36:34.356 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 15:36:38.526 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 15:36:38.556 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 15:36:54.819 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 15:36:58.699 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 15:52:04.205 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:15:15.416 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 16:15:16.228 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 16:15:20.082 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 16:15:20.528 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 16:15:20.529 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 16:15:20.556 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 16:16:21.615 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 16:16:40.721 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:30:35.577 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 16:30:36.526 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 16:30:40.289 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 16:30:40.623 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 16:30:40.625 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 16:30:40.653 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 16:30:46.176 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 16:30:48.335 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:36:25.333 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 16:36:26.040 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 16:36:29.865 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 16:36:30.307 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 16:36:30.309 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 16:36:30.338 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 16:36:38.616 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 16:36:41.019 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:39:53.838 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:42:34.060 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:43:08.138 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:43:29.487 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:47:02.020 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:52:30.046 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:55:23.398 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 16:57:06.834 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 17:03:03.967 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 17:08:47.817 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 17:08:48.358 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 17:08:52.124 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 17:08:52.513 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 17:08:52.514 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 17:08:52.540 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 17:08:59.056 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 17:09:02.911 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 17:44:21.790 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 17:44:50.402 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:05:24.748 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 18:05:25.275 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 18:05:29.006 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 18:05:29.392 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 18:05:29.394 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 18:05:29.421 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 18:07:32.556 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 18:07:36.254 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:08:02.105 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:09:29.466 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:09:53.165 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:10:26.029 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:10:39.921 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:12:04.427 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:12:38.109 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:13:02.270 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:13:23.382 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:13:38.929 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:13:55.822 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 18:30:48.448 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 21:16:58.094 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-05 21:16:58.644 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-05 21:17:02.835 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-05 21:17:03.284 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-05 21:17:03.285 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-05 21:17:03.310 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-05 21:17:27.113 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-05 21:18:03.132 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 21:18:17.633 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 22:56:29.393 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-05 22:59:14.055 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-05 23:00:22.703 +05:30 [INF] -----Sending command: RegistrationCommand
