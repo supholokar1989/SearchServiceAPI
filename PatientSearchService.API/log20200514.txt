@@ -1,0 +1,661 @@
+2020-05-14 01:10:59.204 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-14 01:11:00.674 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-14 01:11:05.313 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-14 01:11:05.722 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-14 01:11:05.724 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-14 01:11:05.771 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-14 01:19:44.111 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:19:49.605 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:19:54.881 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:19:59.891 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:04.685 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:09.256 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:14.571 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:19.623 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:24.872 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:30.215 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:35.437 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:40.620 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:45.803 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:50.619 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:20:55.661 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:21:01.022 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:21:17.802 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:22:36.970 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:e13f6656-4171-4605-b508-2b39e28ace08, TrackingId:31e0f517-5f19-4a06-80d9-780968732d51_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:52:37 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:e13f6656-4171-4605-b508-2b39e28ace08, TrackingId:31e0f517-5f19-4a06-80d9-780968732d51_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:52:37
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:22:36.970 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:37df1d18-b584-454f-b260-b286fba61443, TrackingId:f123a2ee-d30e-4c32-b542-ccfd02f1a2df_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:52:37 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:37df1d18-b584-454f-b260-b286fba61443, TrackingId:f123a2ee-d30e-4c32-b542-ccfd02f1a2df_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:52:37
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:23:05.024 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:07.756 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:09.587 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:30.350 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:37.824 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:46.046 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:23:51.215 +05:30 [ERR] ERROR handling message: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Unknown, Detail="Exception was thrown by handler.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:26:16.420 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-14 01:27:07.213 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:367b50d1-be1e-4ff8-a172-5bf863eee0f7, TrackingId:b5851af7-999f-446e-8fab-63fde576365a_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:57:07 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:367b50d1-be1e-4ff8-a172-5bf863eee0f7, TrackingId:b5851af7-999f-446e-8fab-63fde576365a_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:57:07
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:28:08.924 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:3e368122-c694-49c7-8243-fa4ec4ab980a, TrackingId:5ccbf5e4-d215-4370-8a63-722fac4ed8f0_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:57:51 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:3e368122-c694-49c7-8243-fa4ec4ab980a, TrackingId:5ccbf5e4-d215-4370-8a63-722fac4ed8f0_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:57:51
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:28:08.971 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:3d75bbeb-e54e-4fad-ad84-09d7c0b7b881, TrackingId:9c9ca3a9-1f18-42c2-a2e0-56cee5a3e2f3_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:01 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:3d75bbeb-e54e-4fad-ad84-09d7c0b7b881, TrackingId:9c9ca3a9-1f18-42c2-a2e0-56cee5a3e2f3_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:01
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:28:25.169 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:762d424b-bac4-4b38-b5a7-3e53a8659412, TrackingId:2846bad0-e8c6-42a0-962f-44f271f86354_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:22 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:762d424b-bac4-4b38-b5a7-3e53a8659412, TrackingId:2846bad0-e8c6-42a0-962f-44f271f86354_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:22
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:28:26.538 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-14 01:28:56.057 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:059aa440-9d08-4157-b25d-a52d431f18e1, TrackingId:078f03ad-d9e7-468b-a8f0-aafc32ec84e1_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:55 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:059aa440-9d08-4157-b25d-a52d431f18e1, TrackingId:078f03ad-d9e7-468b-a8f0-aafc32ec84e1_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T19:58:55
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:30:17.132 +05:30 [ERR] ERROR handling message: The operation did not complete within the allocated time 00:00:59.9999625 for object dispose. - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.ServiceBusTimeoutException: The operation did not complete within the allocated time 00:00:59.9999625 for object dispose.
+ ---> System.TimeoutException: The operation did not complete within the allocated time 00:00:59.9999625 for object dispose.
+   at Microsoft.Azure.Amqp.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at Microsoft.Azure.Amqp.ReceivingAmqpLink.DisposeAsyncResult.End(IAsyncResult result)
+   at Microsoft.Azure.Amqp.ReceivingAmqpLink.EndDisposeMessage(IAsyncResult result)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass99_0.<DisposeMessagesAsync>b__1(IAsyncResult a)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.CompleteAsync(IEnumerable`1 lockTokens)
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 145
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:30:17.169 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.CompleteAsync(IEnumerable`1 lockTokens)
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 145
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:30:20.339 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:30:22.004 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:1f861701-4e73-4171-8fc4-ac44f3b934b1, TrackingId:21f6f6b6-eb97-4e0d-9b73-b04d77430cf9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:00:22 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:1f861701-4e73-4171-8fc4-ac44f3b934b1, TrackingId:21f6f6b6-eb97-4e0d-9b73-b04d77430cf9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:00:22
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:30:22.013 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:d49a5dd2-7dc1-4e1b-8a8a-e4cf4f69877c, TrackingId:7fb20c3a-e6ae-4337-9783-9ec7aebfebd0_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:00:22 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:d49a5dd2-7dc1-4e1b-8a8a-e4cf4f69877c, TrackingId:7fb20c3a-e6ae-4337-9783-9ec7aebfebd0_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:00:22
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 01:31:05.739 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.740 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.739 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.792 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:31:05.800 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:31:05.809 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:31:05.773 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.773 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.773 +05:30 [ERR] ERROR handling message: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.") - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Grpc.Core.RpcException: Status(StatusCode=Internal, Detail="Error starting gRPC call: An error occurred while sending the request.")
+   at Grpc.Net.Client.Internal.HttpClientCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.<BlockingUnaryCall>b__3_0[TRequest,TResponse](TRequest req, ClientInterceptorContext`2 ctx)
+   at Grpc.Core.ClientBase.ClientBaseConfiguration.ClientBaseConfigurationInterceptor.BlockingUnaryCall[TRequest,TResponse](TRequest request, ClientInterceptorContext`2 context, BlockingUnaryCallContinuation`2 continuation)
+   at Grpc.Core.Interceptors.InterceptingCallInvoker.BlockingUnaryCall[TRequest,TResponse](Method`2 method, String host, CallOptions options, TRequest request)
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, CallOptions options) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 60
+   at RegistrationService.API.Grpc.RegistrationApiRetrieval.RegistrationApiRetrievalClient.SearchAPIFindAdtMessageById(SearchAPIAdtMessageRequest request, Metadata headers, Nullable`1 deadline, CancellationToken cancellationToken) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\obj\Debug\netcoreapp3.1\SearchServiceGrpc.cs:line 56
+   at PatientSearchService.API.RegistrationGRPCClientService.SearchRegistrationDataById(String documentId, Int64 clientId) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\Grpc\RegistrationGRPCClientService.cs:line 23
+   at PatientSearchService.API.PatientsDetailsMessageReceivedEventHandler.Handle(RegistrationReceivedIntegrationEvent event) in D:\PelitasPOC\PatientSearchService\PatientSearchService.API\IntegrationEvents\EventHandling\PatientsDetailsMessageReceivedEventHandler.cs:line 39
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.ProcessEvent(String eventName, String message) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 186
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 143
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 01:31:05.845 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:31:05.854 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:31:05.862 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance. - Context: {"Action":"Abandon","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue, or was received by a different receiver instance.
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.AbandonAsync(String lockToken, IDictionary`2 propertiesToModify)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.AbandonMessageIfNeededAsync(Message message)
+2020-05-14 01:37:08.729 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-14 01:37:09.270 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-14 01:37:13.158 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-14 01:37:13.571 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-14 01:37:13.573 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-14 01:37:13.599 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-14 01:39:09.169 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-14 01:39:09.169 +05:30 [INF] -----Sending command: RunRegistrationRulesCommand
+2020-05-14 01:39:09.169 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:2e197c6a-2b11-4e53-961f-9cf01296f3f7, TrackingId:6a66cc48-79e6-46f2-9e5f-c53f9b0251c4_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:08:49 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:2e197c6a-2b11-4e53-961f-9cf01296f3f7, TrackingId:6a66cc48-79e6-46f2-9e5f-c53f9b0251c4_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T20:08:49
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 02:29:32.083 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-14 02:29:32.649 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-14 02:29:37.345 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-14 02:29:37.389 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-14 02:37:10.676 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:5ed3d2b2-b502-49eb-b01b-38286fd0c93e, TrackingId:87a27e6f-b4a7-4fd9-9ede-2b73c1e426d9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:07:02 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:5ed3d2b2-b502-49eb-b01b-38286fd0c93e, TrackingId:87a27e6f-b4a7-4fd9-9ede-2b73c1e426d9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:07:02
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 02:37:15.047 +05:30 [INF] -----Sending command: CreateUpdatePatientDetailsInESCommand
+2020-05-14 02:37:26.717 +05:30 [INF] -----Sending command: CreateUpdatePatientDetailsInESCommand
+2020-05-14 02:38:58.456 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:8183cc2a-e100-44c6-990b-c00432880a59, TrackingId:87bbaa48-a952-4d19-a6ba-e81115b94af6_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:46 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:8183cc2a-e100-44c6-990b-c00432880a59, TrackingId:87bbaa48-a952-4d19-a6ba-e81115b94af6_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:46
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 02:38:59.036 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:5ba93a19-3c79-4a87-81db-9d8eea73bff4, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:59 - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:5ba93a19-3c79-4a87-81db-9d8eea73bff4, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:59
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.CompleteAsync(IEnumerable`1 lockTokens)
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 145
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 02:38:59.321 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:8bd3536e-c6e7-4e5a-bae3-d3ac277d7a21, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:59 - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:8bd3536e-c6e7-4e5a-bae3-d3ac277d7a21, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:08:59
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.CompleteAsync(IEnumerable`1 lockTokens)
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 145
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 02:39:03.813 +05:30 [INF] -----Sending command: CreateUpdatePatientDetailsInESCommand
+2020-05-14 02:39:31.520 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:12ce1923-09a7-486b-9361-f24467bd70a9, TrackingId:9009488e-0087-4589-a4b3-ca4ef630b3d9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:09:28 - Context: {"Action":"RenewLock","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:12ce1923-09a7-486b-9361-f24467bd70a9, TrackingId:9009488e-0087-4589-a4b3-ca4ef630b3d9_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:09:28
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.OnRenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.<>c__DisplayClass74_0.<<RenewLockAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(String lockToken)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.RenewLockAsync(Message message)
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.RenewMessageLockTask(Message message, CancellationToken renewLockCancellationToken)
+2020-05-14 02:39:55.486 +05:30 [INF] -----Sending command: CreateUpdatePatientDetailsInESCommand
+2020-05-14 02:40:00.974 +05:30 [ERR] ERROR handling message: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:55e3cd76-42a3-4dba-84b2-115307431b28, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:09:58 - Context: {"Action":"UserCallback","Endpoint":"ipasservicebus.servicebus.windows.net","EntityPath":"registration/Subscriptions/SearchService","ClientId":"MessageReceiver3registration/Subscriptions/SearchService","$type":"ExceptionReceivedContext"}
+Microsoft.Azure.ServiceBus.MessageLockLostException: The lock supplied is invalid. Either the lock expired, or the message has already been removed from the queue. Reference:55e3cd76-42a3-4dba-84b2-115307431b28, TrackingId:34fe11df004a001f007130605ebc5fba_G21_B17, SystemTracker:ipasservicebus:Topic:registration|searchservice, Timestamp:2020-05-13T21:09:58
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.DisposeMessagesAsync(IEnumerable`1 lockTokens, Outcome outcome)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.RetryPolicy.RunOperation(Func`1 operation, TimeSpan operationTimeout)
+   at Microsoft.Azure.ServiceBus.Core.MessageReceiver.CompleteAsync(IEnumerable`1 lockTokens)
+   at iPas.Infrastructure.EventBusServiceBus.EventBusServiceBus.<RegisterSubscriptionClientMessageHandler>b__14_0(Message message, CancellationToken token) in D:\PelitasPOC\PatientSearchService\iPas.Infrastructure.EventBusServiceBus\EventBusServiceBus.cs:line 145
+   at Microsoft.Azure.ServiceBus.MessageReceivePump.MessageDispatchTask(Message message)
+2020-05-14 18:38:20.438 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-14 18:38:23.248 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-14 18:38:28.130 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-14 18:38:28.682 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-14 18:38:28.685 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-14 18:38:28.756 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-14 18:40:43.130 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-14 18:40:43.329 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-14 18:42:00.595 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-14 18:43:29.019 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-14 18:46:30.425 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-14 18:46:31.577 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-14 18:46:36.127 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-14 18:46:36.518 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-14 18:46:36.520 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-14 18:46:36.552 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-14 18:46:53.055 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-14 18:46:53.198 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-14 18:50:24.673 +05:30 [INF] -----Sending command: RegistrationCommand

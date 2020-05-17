@@ -1,0 +1,2 @@
+2020-05-13 12:48:33.533 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-13 23:31:45.729 +05:30 [INF] -----Sending command: RegistrationCommand

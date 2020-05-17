@@ -8,7 +8,7 @@ namespace PatientSearchService.API
         public CreateUpdatePatientDetailsInESCommand(string _accountNumber, DateTimeOffset _admitDate, string _payerCode,
            string _ssn, string _financialClass, string _patientType, string _mrn, string _firstName,
            string _lastName, string _admitType, string _status, string _har, string _clientID, string _patientVisitID,
-           string _registrar, string _dos, string _gender)
+           string _registrar, string _dos, string _gender, string _facility, string _clientName)
         {
             this.AccountNumber = _accountNumber;
             this.AdmitDate = _admitDate;
@@ -27,6 +27,8 @@ namespace PatientSearchService.API
             this.Registrar = _registrar;
             this.DOS = _dos;
             this.Gender = _gender;
+            this.Facility = _facility;
+            this.ClientName = _clientName;
         }
         public string AccountNumber { get; set; }
 
@@ -63,6 +65,10 @@ namespace PatientSearchService.API
         public string Gender { get; set; }
 
         public ESEvent esEvent { get; set; }
+
+        public string Facility { get; set; }
+
+        public string ClientName { get; set; }
     }
 
     public enum ESEvent

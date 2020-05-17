@@ -6,11 +6,8 @@ namespace PatientSearchService.API
 {
     public interface IPatientSearchRepository
     {
-        Task<bool> CreateIndexIfNotExist();
-        Task AddAndSaveToES(PatientDetailDto PatientDetail);
+        Task IndexDocument(PatientDetailDto PatientDetail);
 
         Task<List<PatientDetailDto>> Search(SearchPatientDetailsQuery CommonQuery);
-
-        Task<List<PatientDetailDto>> FindPatientDetails(SearchPatientDetailsQuery CommonQuery);
     }
 }

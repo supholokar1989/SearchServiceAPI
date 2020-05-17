@@ -21,26 +21,23 @@ namespace PatientSearchService.API
         }
 
 
-        public async Task AddAndSaveToES(PatientDetailDto PatientDetail)
+        public async Task IndexDocument(PatientDetailDto PatientDetail)
         {
+            var ClientIndex = PatientDetail.ClientName.Replace(" ", string.Empty).ToLower();
             try
             {
-                if (IndexExist())
+                var result = await CreateIndexIfNotExist(ClientIndex);
+                if (result)
                 {
-                   var resultresponse = await ElasticSearchClient.GetClient().IndexDocumentAsync(PatientDetail);
+                   //var resultresponse = ElasticSearchClient.GetClient().Index(PatientDetail, i => i
+                   //                                                           .Index(ClientIndex)
+                   //                                                           .Id(PatientDetail.PatientVisitID));
+                    var resultresponse = await ElasticSearchClient.GetClient().IndexAsync<PatientDetailDto>(PatientDetail, i => i
+                                                                                       .Index(ClientIndex)
+                                                                                       .Id(PatientDetail.PatientVisitID)
+                                                                                       .Refresh(Elasticsearch.Net.Refresh.True));
                     Console.WriteLine(resultresponse.IsValid.ToString());
                 }
-                else
-                {
-                    var result = await CreateIndexIfNotExist();
-                    if (result)
-                    {
-                      var  resultresponse = await ElasticSearchClient.GetClient().IndexDocumentAsync(PatientDetail);
-                        Console.WriteLine(resultresponse.IsValid.ToString());
-                    }
-
-                }
-
             }catch(Exception ex)
             {
                 Console.WriteLine("Error while adding document to elastic search");
@@ -50,33 +47,25 @@ namespace PatientSearchService.API
 
         }
 
-        public async Task<bool> CreateIndexIfNotExist()
+        public async Task<bool> CreateIndexIfNotExist(string index)
         {
-            if (IndexExist()) return true;
-            var response = await CreateIndexAsync();
-
-            if (!response.IsValid)
-            {
-                return false;
-                throw new Exception(response.ServerError.ToString(), response.OriginalException);
+            if (!ElasticSearchClient.GetClient().Indices.Exists(index).Exists) {
+                var response = await CreateIndexAsync(index);
+                if (!response.IsValid)
+                {
+                    return false;
+                }
             }
-
             return true;
         }
 
-        protected async Task<IResponse> CreateIndexAsync()
+        protected async Task<IResponse> CreateIndexAsync(string index)
         {
-            var indexDescriptor = new CreateIndexDescriptor(IndexName).Map(m => m.AutoMap());
-            var response = await ElasticSearchClient.GetClient().Indices.CreateAsync(IndexName,
+            var response = await ElasticSearchClient.GetClient().Indices.CreateAsync(index,
                     index => index.Map<PatientDetailDto>(
                         x => x.AutoMap()
                     ));
             return response;
-        }
-
-        protected bool IndexExist()
-        {
-            return ElasticSearchClient.GetClient().Indices.Exists(IndexName).Exists;
         }
 
         public async Task<List<PatientDetailDto>> FindPatientDetails(SearchPatientDetailsQuery searchRequest)
@@ -100,7 +89,12 @@ namespace PatientSearchService.API
 
         public async Task<List<PatientDetailDto>> Search(SearchPatientDetailsQuery searchRequest)
         {
+            var ClientIndex = searchRequest.ClientName.Replace(" ", string.Empty).ToLower();
             var filters = new List<Func<QueryContainerDescriptor<PatientDetailDto>, QueryContainer>>();
+            if (!string.IsNullOrEmpty(searchRequest.Facility))
+            {
+                filters.Add(fq => fq.Match(t => t.Field(f => f.Facility).Query(searchRequest.Facility)));
+            }
             if (!string.IsNullOrEmpty(searchRequest.FirstName))
             {
                 filters.Add(fq => fq.Match(t => t.Field(f => f.FirstName).Query(searchRequest.FirstName)));
@@ -141,7 +135,7 @@ namespace PatientSearchService.API
             var results = await ElasticSearchClient.GetClient().SearchAsync<PatientDetailDto>(s => s
                 .From(searchRequest.Skip)
                 .Size(searchRequest.PageSize)
-                .Index("patientdetails")
+                .Index(ClientIndex)
                 .Query((q => q
                  .Bool(bq => bq.Filter(filters)))));
 

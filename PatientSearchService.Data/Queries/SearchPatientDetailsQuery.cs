@@ -31,6 +31,10 @@ namespace PatientSearchService.Data
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public string ClientName { get; set; }
+
+        public string Facility { get; set; }
     }
 }
 

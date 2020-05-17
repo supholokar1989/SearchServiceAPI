@@ -26,8 +26,8 @@ namespace PatientSearchService.API
                 FirstName = notification.FirstName, HAR = notification.HAR, LastName = notification.LastName, 
                 MRN = notification.MRN, PatientType = notification.PatientType, PatientVisitID = notification.PatientVisitID, 
                 PayerCode = notification.PayerCode, Registrar = notification.Registrar, SSN = notification.SSN, 
-                Status = notification.Status, Gender = notification.Gender };
-            await _elasticSearchService.AddAndSaveToES(patientDetails);
+                Status = notification.Status,Facility = notification.Facility, Gender = notification.Gender, ClientName = notification.ClientName };
+            await _elasticSearchService.IndexDocument(patientDetails);
         }
     }
 }

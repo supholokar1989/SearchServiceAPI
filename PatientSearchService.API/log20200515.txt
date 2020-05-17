@@ -1,0 +1,6 @@
+2020-05-15 23:50:26.650 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-15 23:50:29.068 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-15 23:50:34.830 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-15 23:50:35.281 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-15 23:50:35.283 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-15 23:50:35.316 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.

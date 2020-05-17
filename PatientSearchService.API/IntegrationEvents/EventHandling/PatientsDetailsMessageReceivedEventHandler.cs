@@ -60,9 +60,9 @@ namespace PatientSearchService.API
                                                                              message.content.PV1[0].patientType, message.content.PID[0].internalId[0].id, message.content.PID[0].patientName[0].firstName,
                                                                              message.content.PID[0].patientName[0].lastName, message.content.PV1[0].admissionType,
                                                                              "RED-Flagged", "HAR"+ "" + num.ToString(), @event.ClientId.ToString(), @event.PatientVisitId.ToString(),
-                                                                             message.content.EVN[0].operatorId.firstName, "DOS" + "" + num.ToString(), message.content.PID[0].sex);
+                                                                             message.content.EVN[0].operatorId.firstName, "DOS" + "" + num.ToString(), message.content.PID[0].sex, message.content.MSH.sendingFacility.namespaceId, @event.ClientName);
 
-                    _logger.LogInformation("-----Sending command: RunRegistrationRulesCommand");
+                    _logger.LogInformation("-----Sending command: CreateUpdatePatientDetailsInESCommand");
 
                     await _mediatr.Publish(command);
                 await Task.CompletedTask;

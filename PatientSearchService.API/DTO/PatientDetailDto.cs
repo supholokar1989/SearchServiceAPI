@@ -59,5 +59,11 @@ namespace PatientSearchService.API
 
         [JsonProperty("Gender")]
         public string Gender { get; set; }  //message.Hl7Message.Pid.Pid8.Pid81
+
+        [JsonProperty("Facility")]
+        public string Facility { get; set; }
+
+        [JsonProperty("ClientName")]
+        public string ClientName { get; set; }
     }
 }

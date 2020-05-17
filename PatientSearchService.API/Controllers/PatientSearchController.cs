@@ -30,7 +30,7 @@ namespace PatientSearchService.API
         [HttpGet("CreateClientIndex")]
         public async Task<ActionResult<bool>> CreateClientIndex()
         {
-            await _elasticSearchService.CreateIndexIfNotExist();
+            //await _elasticSearchService.CreateIndexIfNotExist("");
 
             return Ok();
         }
@@ -44,7 +44,8 @@ namespace PatientSearchService.API
                                                             DateFrom = Searchquery.DateFrom, 
                                                             PayerCode = Searchquery.PayerCode,
                                                             DateTo = Searchquery.DateTo, 
-                                                            FinancialClass = Searchquery.FinancialClass};
+                                                            FinancialClass = Searchquery.FinancialClass,
+                                                            ClientName = Searchquery.ClientName, Facility = Searchquery.FacilityCode};
             _logger.LogInformation("-----Sending command: RegistrationCommand");
             var result = await _mediatr.Send(command);
             return new JsonResult(result.SearchResult);
