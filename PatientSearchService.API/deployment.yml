@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patientsearchserviceapi-deployment
+spec:
+  selector:
+    matchLabels:
+      app: patientsearchserviceapi-pod
+  template:
+    metadata:
+      labels:
+        app: patientsearchserviceapi-pod
+    spec:
+      containers:
+      - name: patientsearchserviceapi-container
+        image: ipascontreg.azurecr.io/patientsearchserviceapi:v4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 30029
+        - containerPort: 30039

@@ -9,3 +9,9 @@
 2020-05-17 20:16:58.414 +05:30 [INF] -----Sending command: RegistrationCommand
 2020-05-17 20:17:29.474 +05:30 [INF] -----Sending command: RegistrationCommand
 2020-05-17 20:19:28.087 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-17 16:34:48.021 +00:00 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-17 16:34:48.930 +00:00 [INF] Starting web host (PatientSearchService.API)...
+2020-05-17 16:34:53.059 +00:00 [WRN] The messaging entity $Default Could not be found.
+2020-05-17 16:34:53.418 +00:00 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-17 16:34:53.420 +00:00 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-17 16:34:53.466 +00:00 [WRN] Overriding address(es) 'https://+:443, http://+:80'. Binding to endpoints defined in UseKestrel() instead.

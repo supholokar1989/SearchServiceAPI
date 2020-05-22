@@ -1,0 +1,65 @@
+2020-05-19 06:56:37.285 +00:00 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 06:56:40.975 +00:00 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 06:56:45.337 +00:00 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 06:56:45.991 +00:00 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 06:56:45.992 +00:00 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 06:56:46.058 +00:00 [WRN] Overriding address(es) 'https://+:443, http://+:80'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 07:26:19.643 +00:00 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 07:26:20.518 +00:00 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 07:26:24.854 +00:00 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 07:26:25.318 +00:00 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 07:26:25.319 +00:00 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 07:26:25.365 +00:00 [WRN] Overriding address(es) 'https://+:443, http://+:80'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 13:56:04.962 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 13:56:06.322 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 13:56:10.688 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 13:56:11.115 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 13:56:11.117 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 13:56:11.211 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 13:56:40.653 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-19 13:59:40.108 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 13:59:41.105 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 13:59:45.264 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 13:59:45.722 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 13:59:45.724 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 13:59:45.789 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 14:00:28.231 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-19 14:00:58.217 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-19 14:01:38.632 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-19 14:02:17.249 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-19 14:08:05.708 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-19 22:26:56.827 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 22:26:57.733 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 22:27:01.800 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 22:27:02.263 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 22:27:02.266 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 22:27:02.340 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 22:27:46.264 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 22:27:47.125 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 22:27:51.099 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 22:27:51.624 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 22:27:51.626 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 22:27:51.684 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 22:28:57.380 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-19 22:29:05.692 +05:30 [INF] -----Sending command: RegistrationCommand
+2020-05-19 22:29:25.451 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 22:29:26.213 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 22:29:30.371 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 22:29:30.873 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 22:29:30.875 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 22:29:30.936 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 22:29:43.697 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-19 22:30:01.882 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 22:30:02.667 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 22:30:06.649 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 22:30:07.091 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 22:30:07.092 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 22:30:07.152 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 22:30:26.325 +05:30 [WRN] Failed to determine the https port for redirect.
+2020-05-19 22:31:08.955 +05:30 [INF] Configuring web host (PatientSearchService.API)...
+2020-05-19 22:31:09.640 +05:30 [INF] Starting web host (PatientSearchService.API)...
+2020-05-19 22:31:13.627 +05:30 [WRN] The messaging entity $Default Could not be found.
+2020-05-19 22:31:14.137 +05:30 [WRN] The messaging entity RegistrationReceived already exists.
+2020-05-19 22:31:14.139 +05:30 [INF] Subscribing to event RegistrationReceived with PatientsDetailsMessageReceivedEventHandler
+2020-05-19 22:31:14.199 +05:30 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined in UseKestrel() instead.
+2020-05-19 22:31:34.663 +05:30 [WRN] Failed to determine the https port for redirect.

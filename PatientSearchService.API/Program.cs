@@ -47,29 +47,28 @@ namespace PatientSearchService.API
         }
 
         private static IWebHost BuildWebHost(IConfiguration configuration, string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .CaptureStartupErrors(false)
-                .ConfigureKestrel(options =>
-                {
-                    IPAddress grpcAddress = IPAddress.Parse("127.0.0.4");
-                    IPAddress httpAddress = IPAddress.Parse("127.0.0.4");
-                    var ports = GetDefinedPorts(configuration);
-                    options.Listen(httpAddress /*IPAddress.Any*/, ports.httpPort, listenOptions =>
-                    {
-                        listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-                    });
+              WebHost.CreateDefaultBuilder(args)
+                  .CaptureStartupErrors(false)
+                  .ConfigureKestrel(options =>
+                  {
+                      IPAddress address = IPAddress.Parse("127.0.0.1");
+                      var ports = GetDefinedPorts(configuration);
+                      options.Listen(IPAddress.Any, ports.httpPort, listenOptions =>
+                      {
+                          listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                      });
 
-                    options.Listen(grpcAddress /*IPAddress.Any*/, ports.grpcPort, listenOptions =>
-                    {
-                        listenOptions.Protocols = HttpProtocols.Http2;
-                    });
+                      options.Listen(/* address*/ IPAddress.Any, ports.grpcPort, listenOptions =>
+                      {
+                          listenOptions.Protocols = HttpProtocols.Http2;
+                      });
 
-                })
-                .UseStartup<Startup>()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseConfiguration(configuration)
-                .UseSerilog()
-                .Build();
+                  })
+                  .UseStartup<Startup>()
+                  .UseContentRoot(Directory.GetCurrentDirectory())
+                  .UseConfiguration(configuration)
+                  .UseSerilog()
+                  .Build();
 
         private static Serilog.ILogger CreateSerilogLogger(IConfiguration configuration)
         {
@@ -96,8 +95,8 @@ namespace PatientSearchService.API
         }
         private static (int httpPort, int grpcPort) GetDefinedPorts(IConfiguration config)
         {
-            var grpcPort = config.GetValue("GRPC_PORT", 5023);
-            var port = config.GetValue("PORT", 81);
+            var grpcPort = config.GetValue("GRPC_PORT", 30029);
+            var port = config.GetValue("PORT", 30039);
             return (port, grpcPort);
         }
     }
